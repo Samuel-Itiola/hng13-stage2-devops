@@ -7,7 +7,7 @@ services:
       - app_blue
       - app_green
     ports:
-      - "${PUBLIC_PORT:-8080}:80"
+      - "0.0.0.0:${PUBLIC_PORT:-8080}:80"
     environment:
       APP_PORT: "${APP_PORT:-3000}"
     volumes:
@@ -22,7 +22,7 @@ services:
       PORT: "${APP_PORT:-3000}"
       APP_POOL: "blue"
     ports:
-      - "${BLUE_PORT:-8081}:${APP_PORT:-3000}"
+      - "0.0.0.0:${BLUE_PORT:-8081}:${APP_PORT:-3000}"
     networks: [bluegreen]
       
   app_green:
@@ -33,7 +33,7 @@ services:
       PORT: "${APP_PORT:-3000}"
       APP_POOL: "green"
     ports:
-      - "${GREEN_PORT:-8082}:${APP_PORT:-3000}"
+      - "0.0.0.0:${GREEN_PORT:-8082}:${APP_PORT:-3000}"
     networks: [bluegreen]
   
 networks: 
