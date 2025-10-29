@@ -1,0 +1,15 @@
+{
+  "name": "hng13-bluegreen-app",
+  "version": "1.0.0",
+  "private": true,
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "test:e2e": "bash scripts/e2e.sh"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
+
