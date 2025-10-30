@@ -2,8 +2,8 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 
-const appPool = process.env.APP_POOL || 'unknown';
-const releaseId = process.env.RELEASE_ID || 'unknown';
+const appPool = process.env.APP_POOL || 'blue';
+const releaseId = process.env.RELEASE_ID || 'v1.0.0';
 
 let chaosMode = false;
 
