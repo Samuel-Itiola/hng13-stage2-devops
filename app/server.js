@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const appPool = process.env.APP_POOL || 'unknown';
 const releaseId = process.env.RELEASE_ID || 'unknown';
