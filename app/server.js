@@ -16,6 +16,20 @@ app.use((req, res, next) => {
     next();
 });
 
+app.get('/', (req, res) => {
+    res.json({
+        message: 'Blue/Green Deployment Demo',
+        pool: appPool,
+        releaseId: releaseId,
+        endpoints: {
+            version: '/version',
+            health: '/health',
+            chaos_start: 'POST /chaos/start',
+            chaos_stop: 'POST /chaos/stop'
+        }
+    });
+});
+
 app.get('/version', (req, res) => {
     if (chaosMode) {
         return res.status(500).json({ error: 'Service unavailable' });
